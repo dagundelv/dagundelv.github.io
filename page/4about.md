@@ -10,8 +10,7 @@ type: page
 {:toc}
 
 ## 关于我
-
-
+[订阅](http://subscribe.ie8.pages.dev)
 ## 联系我
 
 
