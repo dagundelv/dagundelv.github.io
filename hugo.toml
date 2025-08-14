@@ -1,19 +1,35 @@
 baseURL = 'https://dagundelv.github.io/'
 languageCode = 'zh-cn'
-title = '0902博客'
-theme = 'ananke'
+title = '打滚的驴'
+theme = 'PaperMod'
 
 [params]
-  featured_image = ''
-  description = '技术分享博客'
-  recent_posts_number = 10
-  text_color = '#333333'
+  env = 'production'
+  description = '技术分享博客 - 专注于Linux系统、Web服务器和网络工具'
   author = 'admin'
-  twitter = ''
-  facebook = ''
-  github = ''
-  show_reading_time = true
-  read_more_copy = '继续阅读'
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  displayFullLangName = true
+  
+  [params.homeInfoParams]
+    Title = '欢迎来到打滚的驴 🐴'
+    Content = '这里分享Linux系统管理、Web服务器配置、网络工具和开发技术相关的内容。从2015年开始记录技术学习历程，专注于实用的技术解决方案。'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/dagundelv'
+
+  [params.assets]
+    favicon = '/favicon.ico'
+    favicon16x16 = '/favicon-16x16.png'
+    favicon32x32 = '/favicon-32x32.png'
 
 [menu]
   [[menu.main]]
@@ -25,18 +41,14 @@ theme = 'ananke'
     url = '/about/'
     weight = 20
   [[menu.main]]
-    name = '服务器'
-    url = '/categories/服务器/'
+    name = '归档'
+    url = '/archives/'
     weight = 30
   [[menu.main]]
-    name = 'Web服务器'
-    url = '/categories/web服务器/'
+    name = '分类'
+    url = '/categories/'
     weight = 40
   [[menu.main]]
-    name = '网络工具'
-    url = '/categories/网络工具/'
+    name = '标签'
+    url = '/tags/'
     weight = 50
-  [[menu.main]]
-    name = '工具'
-    url = '/categories/工具/'
-    weight = 60
