@@ -1,4 +1,4 @@
-baseURL = 'https://blog.0902.org/'
+baseURL = 'https://dagundelv.github.io/'
 languageCode = 'zh-cn'
 title = '0902博客'
 theme = 'ananke'
