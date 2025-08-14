@@ -1,0 +1,146 @@
+/* Custom CSS for 0902 blog - matching original blog.0902.org styling */
+
+:root {
+  --primary-color: #333333;
+  --text-color: #333333;
+  --link-color: #0066cc;
+  --border-color: #dddddd;
+  --background-color: #ffffff;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--background-color);
+}
+
+.site-header {
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.main-menu {
+  font-size: 0.95rem;
+}
+
+.main-menu a {
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+.main-menu a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+/* Article styling */
+.post-title {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  color: #666666;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.post-content {
+  line-height: 1.7;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.post-content a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+/* Code blocks */
+.post-content pre {
+  background-color: #f8f8f8;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.post-content code {
+  background-color: #f8f8f8;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  font-size: 0.9rem;
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* List styling */
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list-item {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+}
+
+.post-list-item:last-child {
+  border-bottom: none;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .site-title {
+    font-size: 1.2rem;
+  }
+  
+  .main-menu {
+    font-size: 0.9rem;
+  }
+  
+  .main-menu a {
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .post-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  color: #666666;
+  font-size: 0.85rem;
+  text-align: center;
+}

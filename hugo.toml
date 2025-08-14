@@ -1,0 +1,42 @@
+baseURL = 'https://blog.0902.org/'
+languageCode = 'zh-cn'
+title = '0902博客'
+theme = 'ananke'
+
+[params]
+  featured_image = ''
+  description = '技术分享博客'
+  recent_posts_number = 10
+  text_color = '#333333'
+  author = 'admin'
+  twitter = ''
+  facebook = ''
+  github = ''
+  show_reading_time = true
+  read_more_copy = '继续阅读'
+
+[menu]
+  [[menu.main]]
+    name = '首页'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    name = '关于'
+    url = '/about/'
+    weight = 20
+  [[menu.main]]
+    name = '服务器'
+    url = '/categories/服务器/'
+    weight = 30
+  [[menu.main]]
+    name = 'Web服务器'
+    url = '/categories/web服务器/'
+    weight = 40
+  [[menu.main]]
+    name = '网络工具'
+    url = '/categories/网络工具/'
+    weight = 50
+  [[menu.main]]
+    name = '工具'
+    url = '/categories/工具/'
+    weight = 60
