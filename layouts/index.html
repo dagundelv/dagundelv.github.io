@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="hero">
+  <h1>打滚的驴</h1>
+  <p>记录真实可复用的技术实践，少空话，多可执行步骤。</p>
+</section>
+
+<section>
+  <h2>最新文章</h2>
+  <div class="post-list">
+    {{ $found := false }}
+    {{ range .Site.RegularPages.ByDate.Reverse }}
+      {{ if eq .Section "posts" }}
+        {{ $found = true }}
+        <article class="post-card">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="meta">{{ .Date.Format "2006-01-02" }} · {{ .ReadingTime }} 分钟阅读</p>
+          <p>{{ .Summary | plainify | truncate 120 }}</p>
+        </article>
+      {{ end }}
+    {{ end }}
+    {{ if not $found }}
+      <p>还没有文章，先写第一篇吧。</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工程实践 on 打滚的驴</title>
+    <link>https://dagundelv.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/</link>
+    <description>Recent content in 工程实践 on 打滚的驴</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 28 Feb 2026 09:00:00 +0800</lastBuildDate>
+    <atom:link href="https://dagundelv.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git 自动部署失败：从报错到稳定上线</title>
+      <link>https://dagundelv.github.io/posts/git-auto-deploy-failure/</link>
+      <pubDate>Sat, 28 Feb 2026 09:00:00 +0800</pubDate>
+      <guid>https://dagundelv.github.io/posts/git-auto-deploy-failure/</guid>
+      <description>&lt;p&gt;这篇文章整理自你提供的豆包话题《Git 自动部署失败》，并结合可落地的 Hugo + GitHub Pages 实践，给出一套可复用排查路径。&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-常见失败信号&#34;&gt;1. 常见失败信号&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Push 后仓库没有触发工作流。&lt;/li&gt;&#xA;&lt;li&gt;工作流触发了，但 &lt;code&gt;build&lt;/code&gt; 失败。&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;build&lt;/code&gt; 成功，Pages 仍是旧页面或 404。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;先看日志再改代码，避免“边猜边改”。&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-最小排查清单&#34;&gt;2. 最小排查清单&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;仓库名是否是 &lt;code&gt;dagundelv.github.io&lt;/code&gt;（用户主页仓库建议使用该命名）。&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;hugo.toml&lt;/code&gt; 的 &lt;code&gt;baseURL&lt;/code&gt; 是否是 &lt;code&gt;https://dagundelv.github.io/&lt;/code&gt;。&lt;/li&gt;&#xA;&lt;li&gt;工作流是否安装了 Hugo Extended，并执行了 &lt;code&gt;hugo&lt;/code&gt; 构建。&lt;/li&gt;&#xA;&lt;li&gt;Pages Source 是否配置为 GitHub Actions。&lt;/li&gt;&#xA;&lt;li&gt;是否把无效主题配置留在 &lt;code&gt;hugo.toml&lt;/code&gt;（例如 &lt;code&gt;theme&lt;/code&gt; 指向不存在目录）。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;3-直接可用的修复方案&#34;&gt;3. 直接可用的修复方案&lt;/h2&gt;&#xA;&lt;p&gt;本仓库采用以下策略避免再次踩坑：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;使用仓库内置模板（&lt;code&gt;layouts/&lt;/code&gt; + &lt;code&gt;static/css/&lt;/code&gt;），不依赖远端主题拉取。&lt;/li&gt;&#xA;&lt;li&gt;用 GitHub Actions 自动构建并部署到 Pages。&lt;/li&gt;&#xA;&lt;li&gt;文章与配置分离，先保证站点能稳定出包。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;4-防复发建议&#34;&gt;4. 防复发建议&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;每次改配置后本地先执行一次：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;每次推送前检查：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server -D&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;变更主题时同步检查 &lt;code&gt;hugo.toml&lt;/code&gt; 和 &lt;code&gt;themes/&lt;/code&gt;，避免“配置有、目录无”。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;5-小结&#34;&gt;5. 小结&lt;/h2&gt;&#xA;&lt;p&gt;自动部署失败通常不是单点问题，而是“配置 + 构建 + 发布链路”某一环断裂。&lt;br&gt;&#xA;把排查流程固定下来，比临时修 bug 更重要。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

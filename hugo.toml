@@ -1,0 +1,33 @@
+baseURL = "https://dagundelv.github.io/"
+languageCode = "zh-cn"
+title = "打滚的驴"
+defaultContentLanguage = "zh"
+
+[pagination]
+  pagerSize = 8
+
+[params]
+  description = "专注工程实践、自动化与开发效率的技术博客。"
+  author = "打滚的驴"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 3
+  [[menu.main]]
+    name = "分类"
+    url = "/categories/"
+    weight = 4

@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="post">
+  <header>
+    <h1>{{ .Title }}</h1>
+    <p class="meta">
+      {{ .Date.Format "2006-01-02" }}
+      {{ with .Params.tags }} · 标签: {{ delimit . " / " }}{{ end }}
+      {{ with .Params.categories }} · 分类: {{ delimit . " / " }}{{ end }}
+    </p>
+  </header>
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
